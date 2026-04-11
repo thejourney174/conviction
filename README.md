@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Conviction
 
-## Getting Started
+Marketing site for **Conviction** — premium streetwear.
 
-First, run the development server:
+> The relentless belief in yourself, the courage to act, the discipline to see it through.
+
+## Stack
+
+- **Next.js 16** (App Router, static export)
+- **Tailwind CSS v4**
+- **TypeScript**
+- **Google Fonts**: Playfair Display (display), Inter (UI), UnifrakturMaguntia (blackletter wordmark), JetBrains Mono (labels)
+- Hosted on **Netlify**
+
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Outputs static site to `out/` (Netlify deploys this folder).
 
-To learn more about Next.js, take a look at the following resources:
+## Replacing the placeholder logo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The hero references `/public/logo.svg` — a placeholder rendering of "Conviction" + chess king. To swap in your real logo:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Drop your file into `public/` (e.g. `public/logo.svg` or `public/logo.png`).
+2. If you use a different filename, update the `<img src="/logo.svg" />` reference inside `src/components/Hero.tsx` and `src/components/Header.tsx` (the wordmark in the navbar uses CSS text — leave that or swap it for an `<img>` too).
 
-## Deploy on Vercel
+> **Tip:** PNG with transparent background works fine. SVG is best for sharpness on every device. Keep the original aspect ratio close to 1290 × 900 to avoid layout shift.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Sections
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Section     | File                                  |
+| ----------- | ------------------------------------- |
+| Header      | `src/components/Header.tsx`           |
+| Hero        | `src/components/Hero.tsx`             |
+| Marquee     | `src/components/Marquee.tsx`          |
+| Manifesto   | `src/components/Manifesto.tsx`        |
+| Lookbook    | `src/components/Lookbook.tsx` _(placeholder slots)_ |
+| Drop / Email signup | `src/components/Drop.tsx` _(no backend yet)_ |
+| Footer      | `src/components/Footer.tsx`           |
+
+## Wiring up the email form
+
+`src/components/Drop.tsx` currently fakes the submission. Hook it to a real provider:
+
+- **Buttondown** / **ConvertKit** / **Mailchimp** — use their HTML form action
+- **Resend** + Netlify Function — POST to `/.netlify/functions/subscribe`
+- **Netlify Forms** — add `data-netlify="true"` and `name="signup"` to the `<form>`
+
+Replace the `setTimeout` inside `onSubmit` with a real `fetch`.
+
+## Replacing lookbook placeholders
+
+`src/components/Lookbook.tsx` renders 5 placeholder gradient slots labeled with item names. Swap the gradient `<div>` for an `<img>` (or `next/image` — but you'd need to disable static export for the optimizer) once you have product photography.
+
+## Deploying to Netlify
+
+This repo includes `netlify.toml` already configured.
+
+**Option A — drag and drop**
+
+```bash
+npm run build
+```
+
+Then drop the `out/` folder onto https://app.netlify.com/drop.
+
+**Option B — connect a Git repo**
+
+1. Push this folder to GitHub/GitLab.
+2. In Netlify: **Add new site → Import an existing project → pick the repo**.
+3. Build command and publish directory are auto-detected from `netlify.toml` (`npm run build` → `out`).
+4. Click **Deploy**.
+
+## License
+
+© Conviction. All rights reserved.
