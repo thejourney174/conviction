@@ -28,12 +28,12 @@ export function Footer() {
           </div>
 
           <nav aria-label="Social">
-            <ul className="flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.25em]">
+            <ul className="flex flex-wrap gap-x-8 gap-y-4 text-xs uppercase tracking-[0.25em]">
               {SOCIAL.map((s) => (
                 <li key={s.label}>
                   <a
                     href={s.href}
-                    className="hover:text-foreground/60 transition-colors"
+                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-[width] after:duration-300 hover:after:w-full"
                   >
                     {s.label}
                   </a>
@@ -45,8 +45,9 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row gap-4 md:items-center justify-between text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Conviction. All rights reserved.</p>
-          <p className="font-[family-name:var(--font-jetbrains)] tracking-wider">
-            ✦ Vol. 01
+          <p className="flex items-center gap-2 font-[family-name:var(--font-jetbrains)] tracking-wider">
+            <svg width="7" height="7" viewBox="0 0 8 8" fill="currentColor" aria-hidden><polygon points="4,0 8,4 4,8 0,4"/></svg>
+            Vol. 01
           </p>
         </div>
       </div>

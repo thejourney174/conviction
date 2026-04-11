@@ -27,8 +27,9 @@ export function Lookbook() {
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
             <div>
-              <p className="text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground mb-6">
-                ✦ Vol. 01 / Lookbook
+              <p className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground mb-6">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden><polygon points="4,0 8,4 4,8 0,4"/></svg>
+                Vol. 01 / Lookbook
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl">
                 Built for the
@@ -50,25 +51,25 @@ export function Lookbook() {
               delay={i * 80}
               className={`relative group ${slot.span}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black overflow-hidden ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-500">
                 {/* placeholder ornament */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                  <span className="font-[family-name:var(--font-blackletter)] text-7xl md:text-9xl text-foreground select-none">
+                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+                  <span className="font-[family-name:var(--font-blackletter)] text-[8rem] md:text-[12rem] text-foreground select-none leading-none">
                     C
                   </span>
                 </div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_60%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.06),transparent_60%)]" />
               </div>
 
               <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
-                <span className="font-[family-name:var(--font-jetbrains)] text-[0.65rem] tracking-widest text-muted-foreground">
+                <span className="font-[family-name:var(--font-jetbrains)] text-[0.6rem] tracking-[0.3em] text-white/30">
                   {slot.id}
                 </span>
-                <div>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl text-foreground">
+                <div className="border-t border-white/10 pt-4">
+                  <h3 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl text-foreground leading-tight">
                     {slot.label}
                   </h3>
-                  <p className="text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground mt-1">
+                  <p className="text-[0.65rem] uppercase tracking-[0.25em] text-white/40 mt-2">
                     {slot.tone}
                   </p>
                 </div>

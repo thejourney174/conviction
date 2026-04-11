@@ -29,8 +29,9 @@ export function Manifesto() {
     >
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <p className="text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground mb-6">
-            ✦ The Manifesto
+          <p className="flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground mb-6">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden><polygon points="4,0 8,4 4,8 0,4"/></svg>
+            The Manifesto
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl lg:text-7xl leading-[0.95] max-w-4xl">
             We don&apos;t make clothes for spectators.

@@ -17,18 +17,13 @@ export function Hero() {
       />
 
       <div className="relative z-10 flex flex-col items-center px-4 text-center">
-        {/* Logo block.
-            <Logo /> tries /public/logo.png → .jpg → .svg in order.
-            Drop your real logo into public/ as logo.png (recommended) and
-            it will appear here automatically — no code changes needed.
-            The aspect-ratio wrapper guarantees the layout doesn't collapse
-            even before the image paints. */}
-        <div className="relative w-full max-w-[900px] aspect-[1290/500] flex items-center justify-center">
+        {/* Logo block */}
+        <div className="relative w-full max-w-[900px] mx-auto aspect-[1290/500] flex items-center justify-center">
           <Logo className="relative z-10 w-full h-full object-contain" />
         </div>
 
         {/* Tagline */}
-        <p className="mt-10 md:mt-12 max-w-xl font-[family-name:var(--font-playfair)] text-lg md:text-xl leading-relaxed text-foreground/85">
+        <p className="mt-6 md:mt-8 max-w-xl font-[family-name:var(--font-playfair)] text-lg md:text-xl leading-relaxed text-foreground/85">
           The relentless belief in yourself,
           <br />
           the courage to act,
@@ -37,10 +32,10 @@ export function Hero() {
         </p>
 
         {/* CTA */}
-        <div className="mt-10 md:mt-14 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-10 md:mt-12 flex flex-col items-center gap-5">
           <a
             href="#drop"
-            className="group inline-flex items-center justify-center min-h-[48px] px-8 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors"
+            className="group inline-flex items-center justify-center min-h-[52px] px-10 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors"
           >
             Join the First Drop
             <svg
@@ -56,7 +51,7 @@ export function Hero() {
           </a>
           <a
             href="#manifesto"
-            className="inline-flex items-center justify-center min-h-[48px] px-8 border border-border text-xs uppercase tracking-[0.25em] font-medium hover:bg-muted transition-colors"
+            className="text-xs uppercase tracking-[0.25em] text-foreground/50 hover:text-foreground/90 transition-colors border-b border-foreground/20 hover:border-foreground/60 pb-px"
           >
             Read the Manifesto
           </a>
