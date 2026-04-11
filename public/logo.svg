@@ -9,12 +9,14 @@
     </linearGradient>
   </defs>
   <text
-    x="50%" y="65%"
+    x="50%" y="68%"
     text-anchor="middle"
     font-family="UnifrakturMaguntia, 'Cinzel', 'Times New Roman', serif"
     font-size="280"
     font-weight="700"
     fill="url(#silver)"
     letter-spacing="2"
+    textLength="1240"
+    lengthAdjust="spacingAndGlyphs"
   >Conviction</text>
 </svg>

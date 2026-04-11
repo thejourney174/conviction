@@ -16,14 +16,14 @@ export function Hero() {
         className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent"
       />
 
-      <div className="relative z-10 flex flex-col items-center px-6 text-center">
+      <div className="relative z-10 flex flex-col items-center px-4 text-center">
         {/* Logo block.
             <Logo /> tries /public/logo.png → .jpg → .svg in order.
             Drop your real logo into public/ as logo.png (recommended) and
             it will appear here automatically — no code changes needed.
             The aspect-ratio wrapper guarantees the layout doesn't collapse
             even before the image paints. */}
-        <div className="relative w-full max-w-[720px] aspect-[1290/500] flex items-center justify-center">
+        <div className="relative w-full max-w-[900px] aspect-[1290/500] flex items-center justify-center">
           <Logo className="relative z-10 w-full h-full object-contain" />
         </div>
 
