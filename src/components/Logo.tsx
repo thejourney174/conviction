@@ -3,15 +3,10 @@
 import { useEffect, useState } from "react";
 
 // Renders the brand wordmark.
-// SSR uses the placeholder SVG (which always exists in /public/logo.svg).
-// On mount, the client checks if a real PNG or JPG was dropped into /public —
-// if so, swaps to that. This avoids SSR/hydration mismatches AND avoids
-// flashing 404s on every page load.
-//
-// To use your real logo: drop /public/logo.png (or .jpg) into the project.
-// No code changes needed.
+// When a real logo.png or logo.jpg exists in /public, renders it as <img>.
+// Otherwise renders an inline SVG placeholder using the page's loaded fonts
+// (so the blackletter font actually applies — <img src=".svg"> can't access CSS fonts).
 const PREFERRED = ["/logo.png", "/logo.jpg"] as const;
-const FALLBACK = "/logo.svg";
 
 interface LogoProps {
   className?: string;
@@ -19,7 +14,7 @@ interface LogoProps {
 }
 
 export function Logo({ className = "", alt = "Conviction" }: LogoProps) {
-  const [src, setSrc] = useState<string>(FALLBACK);
+  const [src, setSrc] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -36,14 +31,46 @@ export function Logo({ className = "", alt = "Conviction" }: LogoProps) {
           // ignore network errors and try next candidate
         }
       }
+      if (!cancelled) setSrc("placeholder");
     })();
     return () => {
       cancelled = true;
     };
   }, []);
 
-  return (
+  // Real image found
+  if (src && src !== "placeholder") {
     /* eslint-disable-next-line @next/next/no-img-element */
-    <img src={src} alt={alt} className={className} />
+    return <img src={src} alt={alt} className={className} />;
+  }
+
+  // Inline SVG placeholder — has access to CSS fonts loaded on the page
+  return (
+    <svg
+      viewBox="0 0 1290 500"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label={alt}
+      className={className}
+    >
+      <defs>
+        <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="50%" stopColor="#d4d4d8" />
+          <stop offset="100%" stopColor="#ffffff" />
+        </linearGradient>
+      </defs>
+      <text
+        x="50%"
+        y="68%"
+        textAnchor="middle"
+        fontFamily="var(--font-blackletter), UnifrakturMaguntia, serif"
+        fontSize="280"
+        fill="url(#silver)"
+        textLength="1240"
+        lengthAdjust="spacingAndGlyphs"
+      >
+        Conviction
+      </text>
+    </svg>
   );
 }
