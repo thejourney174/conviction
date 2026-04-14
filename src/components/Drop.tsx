@@ -23,7 +23,7 @@ export function Drop() {
   return (
     <section
       id="drop"
-      className="relative py-28 md:py-40 px-6 md:px-10 bg-background overflow-hidden"
+      className="relative py-28 md:py-40 px-6 md:px-10 bg-background overflow-hidden scroll-mt-16 md:scroll-mt-20"
     >
       {/* Big background type */}
       <div

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   title: "CONVICTION — The relentless belief in yourself.",
   description:
     "Conviction is apparel for those who act on belief. The relentless belief in yourself, the courage to act, the discipline to see it through.",
-  metadataBase: new URL("https://conviction.example"),
+  metadataBase: new URL("https://cnvctn.co"),
   openGraph: {
     title: "CONVICTION",
     description:

@@ -118,10 +118,10 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-        <span>Scroll</span>
-        <span className="block w-px h-12 bg-gradient-to-b from-muted-foreground to-transparent" />
+      {/* Scroll cue — line only on mobile, label + line on desktop */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
+        <span className="hidden md:block">Scroll</span>
+        <span className="block w-px h-8 md:h-12 bg-gradient-to-b from-muted-foreground to-transparent" />
       </div>
     </section>
   );

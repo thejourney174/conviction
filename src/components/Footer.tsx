@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="border-t border-border bg-background px-6 md:px-10 py-16"
+      className="border-t border-border bg-background px-6 md:px-10 py-16 scroll-mt-16 md:scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 md:items-end justify-between">
@@ -33,7 +33,7 @@ export function Footer() {
                 <li key={s.label}>
                   <a
                     href={s.href}
-                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-[width] after:duration-300 hover:after:w-full"
+                    className="relative inline-flex items-center min-h-[44px] py-2 text-muted-foreground hover:text-foreground transition-colors duration-200 after:absolute after:bottom-1 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-[width] after:duration-300 hover:after:w-full"
                   >
                     {s.label}
                   </a>

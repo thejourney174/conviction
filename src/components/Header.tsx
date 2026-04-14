@@ -70,23 +70,25 @@ export function Header() {
         </button>
       </nav>
 
-      {open && (
-        <div className="md:hidden border-t border-border bg-background">
-          <ul className="flex flex-col py-4">
-            {NAV.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-6 py-4 text-sm uppercase tracking-[0.2em] hover:bg-muted transition-colors"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`md:hidden border-border bg-background overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? "max-h-64 opacity-100 border-t" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col py-4">
+          {NAV.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block px-6 py-4 text-sm uppercase tracking-[0.2em] hover:bg-muted transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

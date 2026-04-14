@@ -14,14 +14,14 @@ const SLOTS = [
   { id: "03", label: "Discipline Cap", tone: "Embroidered",    span: "aspect-[4/5]" },
   { id: "04", label: "Manifesto Crew", tone: "Cream / Ink",    span: "md:col-span-2 aspect-[4/3]" },
   { id: "05", label: "Courage Tote",   tone: "Canvas",         span: "md:col-span-2 aspect-[4/3]" },
-  { id: "06", label: "Vol. 01 Lookbook", tone: "Editorial",    span: "md:col-span-4 aspect-[21/9]" },
+  { id: "06", label: "Vol. 01 Lookbook", tone: "Editorial",    span: "md:col-span-4 aspect-[4/3] md:aspect-[21/9]" },
 ];
 
 export function Lookbook() {
   return (
     <section
       id="lookbook"
-      className="relative py-28 md:py-40 px-6 md:px-10 bg-muted/40"
+      className="relative py-28 md:py-40 px-6 md:px-10 bg-muted/40 scroll-mt-16 md:scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto">
         <Reveal>

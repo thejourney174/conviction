@@ -25,7 +25,7 @@ export function Manifesto() {
   return (
     <section
       id="manifesto"
-      className="relative py-28 md:py-40 px-6 md:px-10"
+      className="relative py-28 md:py-40 px-6 md:px-10 scroll-mt-16 md:scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto">
         <Reveal>
@@ -41,7 +41,7 @@ export function Manifesto() {
           </h2>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-12 md:gap-10 mt-20 md:mt-28">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mt-20 md:mt-28">
           {PILLARS.map((p, i) => (
             <Reveal key={p.title} delay={i * 120}>
               <article className="border-t border-border pt-8">
