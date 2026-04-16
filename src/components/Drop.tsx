@@ -50,26 +50,32 @@ export function Drop() {
             <div className="flex flex-col gap-3">
 
               {/* Email */}
-              <label htmlFor="mce-EMAIL" className="sr-only">Email Address</label>
-              <input
-                type="email"
-                name="EMAIL"
-                className="required email w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
-                id="mce-EMAIL"
-                required
-                placeholder="your@email.com"
-              />
+              <div className="mc-field-group">
+                <label htmlFor="mce-EMAIL" className="sr-only">Email Address</label>
+                <input
+                  type="email"
+                  name="EMAIL"
+                  className="required email w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
+                  id="mce-EMAIL"
+                  required
+                  placeholder="your@email.com"
+                />
+                <span id="mce-EMAIL-HELPERTEXT" className="helper_text sr-only">Your Email</span>
+              </div>
 
               {/* Phone */}
-              <label htmlFor="mce-PHONE" className="sr-only">Phone Number</label>
-              <input
-                type="tel"
-                name="PHONE"
-                className="REQ_CSS w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
-                id="mce-PHONE"
-                required
-                placeholder="+1 000 000 0000"
-              />
+              <div className="mc-field-group">
+                <label htmlFor="mce-PHONE" className="sr-only">Phone Number</label>
+                <input
+                  type="tel"
+                  name="PHONE"
+                  className="REQ_CSS w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
+                  id="mce-PHONE"
+                  required
+                  placeholder="+1 000 000 0000"
+                />
+                <span id="mce-PHONE-HELPERTEXT" className="helper_text sr-only">Phone Number</span>
+              </div>
 
               {/* Mailchimp validation response containers */}
               <div id="mce-responses" className="min-h-[1.25rem]" aria-live="polite">
