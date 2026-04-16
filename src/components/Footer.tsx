@@ -1,8 +1,8 @@
 const SOCIAL = [
-  { label: "Instagram", href: "#" },
-  { label: "TikTok", href: "#" },
-  { label: "X", href: "#" },
-  { label: "YouTube", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/cnvctn.co?igsh=MTBia212azAwZzl6Mw%3D%3D&utm_source=qr",
+  },
 ];
 
 export function Footer() {
@@ -33,6 +33,8 @@ export function Footer() {
                 <li key={s.label}>
                   <a
                     href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="relative inline-flex items-center min-h-[44px] py-2 text-muted-foreground hover:text-foreground transition-colors duration-200 after:absolute after:bottom-1 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-[width] after:duration-300 hover:after:w-full"
                   >
                     {s.label}

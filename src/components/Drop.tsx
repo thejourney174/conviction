@@ -1,25 +1,9 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import Script from "next/script";
 import { Reveal } from "./Reveal";
 
-type Status = "idle" | "submitting" | "success" | "error";
-
 export function Drop() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<Status>("idle");
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!email || !/.+@.+\..+/.test(email)) {
-      setStatus("error");
-      return;
-    }
-    setStatus("submitting");
-    // No backend yet — simulate. Replace with real handler (Resend, Buttondown, etc.)
-    setTimeout(() => setStatus("success"), 700);
-  }
-
   return (
     <section
       id="drop"
@@ -38,7 +22,9 @@ export function Drop() {
       <div className="relative max-w-3xl mx-auto text-center">
         <Reveal>
           <p className="flex items-center justify-center gap-2 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground mb-6">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden><polygon points="4,0 8,4 4,8 0,4"/></svg>
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden>
+              <polygon points="4,0 8,4 4,8 0,4" />
+            </svg>
             The First Drop
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl lg:text-7xl leading-[0.95]">
@@ -53,56 +39,93 @@ export function Drop() {
 
         <Reveal delay={120}>
           <form
-            onSubmit={onSubmit}
-            className="mt-12 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            action="https://ricoxjourney.us17.list-manage.com/subscribe/post?u=e7867d133d3dbbd6fec873e83&amp;id=aca39b0e15&amp;f_id=00fac3e1f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate mt-12 max-w-md mx-auto"
+            target="_blank"
             noValidate
           >
-            <label htmlFor="email" className="sr-only">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              autoComplete="email"
-              inputMode="email"
-              required
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                if (status === "error") setStatus("idle");
-              }}
-              disabled={status === "submitting" || status === "success"}
-              aria-invalid={status === "error"}
-              className="flex-1 min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors disabled:opacity-50"
-            />
-            <button
-              type="submit"
-              disabled={status === "submitting" || status === "success"}
-              className="min-h-[48px] px-8 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {status === "submitting"
-                ? "Joining…"
-                : status === "success"
-                ? "You're in"
-                : "Notify Me"}
-            </button>
-          </form>
+            <div className="flex flex-col gap-3">
 
-          <div className="mt-4 min-h-[1.25rem]" aria-live="polite">
-            {status === "error" && (
-              <p className="text-xs text-red-400">
-                Enter a valid email address.
-              </p>
-            )}
-            {status === "success" && (
-              <p className="text-xs text-foreground/70">
-                Welcome. We&apos;ll be in touch when the first drop is ready.
-              </p>
-            )}
-          </div>
+              {/* Email */}
+              <label htmlFor="mce-EMAIL" className="sr-only">Email Address</label>
+              <input
+                type="email"
+                name="EMAIL"
+                className="required email w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
+                id="mce-EMAIL"
+                required
+                placeholder="your@email.com"
+              />
+
+              {/* Phone */}
+              <label htmlFor="mce-PHONE" className="sr-only">Phone Number</label>
+              <input
+                type="tel"
+                name="PHONE"
+                className="REQ_CSS w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
+                id="mce-PHONE"
+                required
+                placeholder="+1 000 000 0000"
+              />
+
+              {/* Mailchimp validation response containers */}
+              <div id="mce-responses" className="min-h-[1.25rem]" aria-live="polite">
+                <div
+                  id="mce-error-response"
+                  className="response text-xs text-red-400"
+                  style={{ display: "none" }}
+                />
+                <div
+                  id="mce-success-response"
+                  className="response text-xs text-foreground/70"
+                  style={{ display: "none" }}
+                />
+              </div>
+
+              {/* Anti-bot honeypot — must stay hidden */}
+              <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
+                <input
+                  type="text"
+                  name="b_e7867d133d3dbbd6fec873e83_aca39b0e15"
+                  tabIndex={-1}
+                  defaultValue=""
+                  readOnly
+                />
+              </div>
+
+              {/* Submit */}
+              <input
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                value="Notify Me"
+                className="w-full min-h-[48px] px-8 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors cursor-pointer"
+              />
+
+            </div>
+          </form>
         </Reveal>
       </div>
+
+      {/* Mailchimp validation — bundles its own jQuery, loads after hydration */}
+      <Script
+        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+        strategy="afterInteractive"
+        onLoad={() => {
+          const jq = (window as unknown as Record<string, unknown>).jQuery as ((...args: unknown[]) => unknown) & { noConflict: (removeAll?: boolean) => unknown };
+          if (typeof jq !== "undefined") {
+            (function ($: unknown) {
+              void $;
+              (window as unknown as Record<string, unknown>).fnames = ["EMAIL", "", "FNAME", "LNAME", "", "PHONE"];
+              (window as unknown as Record<string, unknown>).ftypes = ["email", "", "text", "text", "", "phone"];
+            })(jq);
+            (window as unknown as Record<string, unknown>).$mcj = jq.noConflict(true);
+          }
+        }}
+      />
     </section>
   );
 }
