@@ -39,7 +39,7 @@ export function Drop() {
 
         <Reveal delay={120}>
           <form
-            action="https://ricoxjourney.us17.list-manage.com/subscribe/post?u=e7867d133d3dbbd6fec873e83&amp;id=aca39b0e15&amp;f_id=00fac3e1f0"
+            action="https://ricoxjourney.us17.list-manage.com/subscribe/post?u=e7867d133d3dbbd6fec873e83&amp;id=86f3c356cf&amp;f_id=00f9c3e1f0"
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
@@ -74,7 +74,7 @@ export function Drop() {
                   required
                   placeholder="+1 000 000 0000"
                 />
-                <span id="mce-PHONE-HELPERTEXT" className="helper_text sr-only">Phone Number</span>
+                <span id="mce-PHONE-HELPERTEXT" className="helper_text sr-only">Your Phone Number</span>
               </div>
 
               {/* Mailchimp validation response containers */}
@@ -95,7 +95,7 @@ export function Drop() {
               <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
                 <input
                   type="text"
-                  name="b_e7867d133d3dbbd6fec873e83_aca39b0e15"
+                  name="b_e7867d133d3dbbd6fec873e83_86f3c356cf"
                   tabIndex={-1}
                   defaultValue=""
                   readOnly
