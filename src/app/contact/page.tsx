@@ -54,14 +54,14 @@ export default function ContactPage() {
           <div className="w-full border-t border-border pt-12 flex flex-col items-center gap-8">
 
             <a
-              href="mailto:team@cnvctn.co"
+              href="mailto:info@cnvctn.co"
               className="group flex flex-col items-center gap-2"
             >
               <span className="text-[0.6rem] uppercase tracking-[0.35em] text-foreground/30 font-[family-name:var(--font-jetbrains)]">
                 Email
               </span>
               <span className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl group-hover:text-foreground/70 transition-colors duration-200">
-                team@cnvctn.co
+                info@cnvctn.co
               </span>
             </a>
 

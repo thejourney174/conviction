@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Lookbook } from "@/components/Lookbook";
+import { Drop } from "@/components/Drop";
 import { Footer } from "@/components/Footer";
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function LookbookPage() {
       <Header />
       <main className="flex-1 pt-16 md:pt-20">
         <Lookbook />
+        <Drop />
       </main>
       <Footer />
     </>
