@@ -85,10 +85,29 @@ export default function CheckEmailPage() {
             ))}
           </div>
 
-          <p className="mt-12 text-xs text-muted-foreground tracking-wider">
-            Can&apos;t find the email?{" "}
-            <span className="text-foreground/60">Check your spam folder.</span>
-          </p>
+          {/* Troubleshooting */}
+          <div className="mt-12 w-full border-t border-border pt-10 flex flex-col items-center gap-6">
+            <p className="text-xs text-muted-foreground uppercase tracking-[0.2em]">
+              Didn&apos;t get it?
+            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <a
+                href="/#drop"
+                className="inline-flex items-center justify-center min-h-[44px] px-8 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors"
+              >
+                Try a different email
+              </a>
+              <a
+                href="/#drop"
+                className="inline-flex items-center justify-center min-h-[44px] px-8 bg-transparent border border-foreground/30 text-foreground text-xs uppercase tracking-[0.25em] font-medium hover:border-foreground transition-colors"
+              >
+                Resend confirmation
+              </a>
+            </div>
+            <p className="text-xs text-foreground/40 tracking-wider">
+              Also check your spam or promotions folder.
+            </p>
+          </div>
 
         </div>
       </main>
