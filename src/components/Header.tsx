@@ -30,7 +30,7 @@ export function Header() {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <a
-          href="#top"
+          href="/"
           className="font-[family-name:var(--font-blackletter)] text-2xl md:text-3xl tracking-wide hover:opacity-80 transition-opacity"
           aria-label="Conviction — home"
         >
