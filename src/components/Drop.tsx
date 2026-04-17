@@ -47,7 +47,6 @@ export function Drop() {
               data-uid="e01ff4574d"
               data-format="inline"
               data-version="5"
-              data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;redirect&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;https://cnvctn.co/check-email&quot;}}}"
               min-width="400 500 600 700 800"
             >
               <div data-style="clean">
