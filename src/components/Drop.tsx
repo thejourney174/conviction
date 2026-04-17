@@ -54,7 +54,7 @@ export function Drop() {
                 <div data-element="fields" data-stacked="true" className="seva-fields formkit-fields">
                   <div className="formkit-field">
                     <input
-                      className="formkit-input"
+                      className="formkit-input w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
                       aria-label="First Name"
                       name="fields[first_name]"
                       required
@@ -64,7 +64,7 @@ export function Drop() {
                   </div>
                   <div className="formkit-field">
                     <input
-                      className="formkit-input"
+                      className="formkit-input w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
                       name="email_address"
                       aria-label="Email Address"
                       placeholder="Email Address"
@@ -74,7 +74,7 @@ export function Drop() {
                   </div>
                   <div className="formkit-field">
                     <input
-                      className="formkit-input"
+                      className="formkit-input w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
                       aria-label="Phone"
                       name="fields[phone]"
                       required
@@ -82,7 +82,7 @@ export function Drop() {
                       type="text"
                     />
                   </div>
-                  <button data-element="submit" className="formkit-submit">
+                  <button data-element="submit" className="formkit-submit w-full min-h-[48px] px-8 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors cursor-pointer">
                     <div className="formkit-spinner">
                       <div /><div /><div />
                     </div>
