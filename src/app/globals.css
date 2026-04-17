@@ -116,13 +116,3 @@ body {
   animation: marquee 18s linear infinite;
 }
 
-/* Mailchimp response overrides — force dark-theme colors */
-#mce-error-response,
-#mce-success-response {
-  background: transparent !important;
-  color: inherit !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  font-size: 0.75rem !important;
-  border: none !important;
-}

@@ -38,99 +38,67 @@ export function Drop() {
         </Reveal>
 
         <Reveal delay={120}>
-          <form
-            action="https://ricoxjourney.us17.list-manage.com/subscribe/post?u=e7867d133d3dbbd6fec873e83&amp;id=86f3c356cf&amp;f_id=00f9c3e1f0"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            className="validate mt-12 max-w-md mx-auto"
-            target="_blank"
-            noValidate
-          >
-            <div className="flex flex-col gap-3">
-
-              {/* Email */}
-              <div className="mc-field-group">
-                <label htmlFor="mce-EMAIL" className="sr-only">Email Address</label>
-                <input
-                  type="email"
-                  name="EMAIL"
-                  className="required email w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
-                  id="mce-EMAIL"
-                  required
-                  placeholder="your@email.com"
-                />
-                <span id="mce-EMAIL-HELPERTEXT" className="helper_text sr-only">Your Email</span>
+          <div className="mt-12 max-w-md mx-auto">
+            <form
+              action="https://app.kit.com/forms/9338887/subscriptions"
+              className="seva-form formkit-form"
+              method="post"
+              data-sv-form="9338887"
+              data-uid="e01ff4574d"
+              data-format="inline"
+              data-version="5"
+              min-width="400 500 600 700 800"
+            >
+              <div data-style="clean">
+                <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" />
+                <div data-element="fields" data-stacked="true" className="seva-fields formkit-fields">
+                  <div className="formkit-field">
+                    <input
+                      className="formkit-input"
+                      aria-label="First Name"
+                      name="fields[first_name]"
+                      required
+                      placeholder="First Name"
+                      type="text"
+                    />
+                  </div>
+                  <div className="formkit-field">
+                    <input
+                      className="formkit-input"
+                      name="email_address"
+                      aria-label="Email Address"
+                      placeholder="Email Address"
+                      required
+                      type="email"
+                    />
+                  </div>
+                  <div className="formkit-field">
+                    <input
+                      className="formkit-input"
+                      aria-label="Phone"
+                      name="fields[phone]"
+                      required
+                      placeholder="Phone"
+                      type="text"
+                    />
+                  </div>
+                  <button data-element="submit" className="formkit-submit">
+                    <div className="formkit-spinner">
+                      <div /><div /><div />
+                    </div>
+                    <span>Notify Me</span>
+                  </button>
+                </div>
               </div>
-
-              {/* Phone */}
-              <div className="mc-field-group">
-                <label htmlFor="mce-PHONE" className="sr-only">Phone Number</label>
-                <input
-                  type="tel"
-                  name="PHONE"
-                  className="REQ_CSS w-full min-h-[48px] px-4 bg-transparent border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
-                  id="mce-PHONE"
-                  required
-                  placeholder="+1 000 000 0000"
-                />
-                <span id="mce-PHONE-HELPERTEXT" className="helper_text sr-only">Your Phone Number</span>
-              </div>
-
-              {/* Mailchimp validation response containers */}
-              <div id="mce-responses" className="min-h-[1.25rem]" aria-live="polite">
-                <div
-                  id="mce-error-response"
-                  className="response text-xs text-red-400"
-                  style={{ display: "none" }}
-                />
-                <div
-                  id="mce-success-response"
-                  className="response text-xs text-foreground/70"
-                  style={{ display: "none" }}
-                />
-              </div>
-
-              {/* Anti-bot honeypot — must stay hidden */}
-              <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
-                <input
-                  type="text"
-                  name="b_e7867d133d3dbbd6fec873e83_86f3c356cf"
-                  tabIndex={-1}
-                  defaultValue=""
-                  readOnly
-                />
-              </div>
-
-              {/* Submit */}
-              <input
-                type="submit"
-                name="subscribe"
-                id="mc-embedded-subscribe"
-                value="Notify Me"
-                className="w-full min-h-[48px] px-8 bg-foreground text-background text-xs uppercase tracking-[0.25em] font-medium hover:bg-foreground/90 transition-colors cursor-pointer"
-              />
-
-            </div>
-          </form>
+            </form>
+          </div>
         </Reveal>
       </div>
 
-      {/* Mailchimp validation — bundles its own jQuery, loads after hydration */}
+      {/* Kit embed script — loads after hydration */}
       <Script
-        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+        src="https://f.convertkit.com/ckjs/ck.5.js"
         strategy="afterInteractive"
-        onLoad={() => {
-          const jq = (window as unknown as Record<string, unknown>).jQuery as ((...args: unknown[]) => unknown) & { noConflict: (removeAll?: boolean) => unknown };
-          if (typeof jq !== "undefined") {
-            (function ($: unknown) {
-              void $;
-              (window as unknown as Record<string, unknown>).fnames = ["EMAIL", "", "FNAME", "LNAME", "", "PHONE"];
-              (window as unknown as Record<string, unknown>).ftypes = ["email", "", "text", "text", "", "phone"];
-            })(jq);
-            (window as unknown as Record<string, unknown>).$mcj = jq.noConflict(true);
-          }
-        }}
       />
     </section>
   );
