@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "#manifesto", label: "Manifesto" },
-  { href: "#lookbook", label: "Lookbook" },
+  { href: "/manifesto", label: "Manifesto" },
+  { href: "/lookbook", label: "Lookbook" },
   { href: "/drop", label: "First Drop" },
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
